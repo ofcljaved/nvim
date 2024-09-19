@@ -1,5 +1,6 @@
 require 'captainjacksparrow.set'
 require 'captainjacksparrow.remap'
+require 'captainjacksparrow.lazy'
 
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
