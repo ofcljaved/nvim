@@ -17,6 +17,15 @@ return {
 
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-path',
+    {
+      'Saecki/crates.nvim',
+      event = { 'BufRead Cargo.toml' },
+      opts = {
+        completion = {
+          cmp = { enabled = true },
+        },
+      },
+    },
   },
   config = function()
     local cmp = require 'cmp'
