@@ -7,6 +7,13 @@ return {
     { 'j-hui/fidget.nvim', opts = {} },
     'hrsh7th/cmp-nvim-lsp',
   },
+  opts = {
+    setup = {
+      rust_analyzer = function()
+        return true
+      end,
+    },
+  },
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
@@ -62,7 +69,6 @@ return {
     capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local servers = {
-      rust_analyzer = {},
       ts_ls = {},
       cssls = {},
       html = {},
