@@ -18,8 +18,16 @@ return {
     config = function()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
       require("mason").setup()
-      require("mason-lspconfig").setup()
-      require("lspconfig").lua_ls.setup { capabilities = capabilities }
+      require("mason-lspconfig").setup {
+        ensure_installed = { "lua_ls", "ts_ls", "tailwindcss", "cssls", "html" },
+        handlers = {
+          function(server_name)
+            require("lspconfig")[server_name].setup {
+              capabilities = capabilities,
+            }
+          end,
+        }
+      }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
