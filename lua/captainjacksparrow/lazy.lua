@@ -16,6 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    { import = "captainjacksparrowplugins" },
+    { import = "captainjacksparrow.plugins" },
   },
 })
