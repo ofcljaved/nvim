@@ -1,6 +1,6 @@
-require("jacksparrow.set")
-require("jacksparrow.remap")
-require("jacksparrow.lazy")
+require("captainjacksparrow.set")
+require("captainjacksparrow.remap")
+require("captainjacksparrow.lazy")
 
 local km = vim.keymap;
 
