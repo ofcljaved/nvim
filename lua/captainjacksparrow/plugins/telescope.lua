@@ -39,7 +39,7 @@ return {
           cwd = vim.fn.stdpath("config")
         }
       end)
-      require("captainjacksparrowtelescope.livegrep").setup()
+      require("captainjacksparrow.telescope.livegrep").setup()
     end
   }
 }
